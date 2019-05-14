@@ -44,11 +44,6 @@ export class CaptchaProvider {
         } else {
             this.result = firstNum - secondNum;
         }
-        console.error(useMinus);
-        console.error(negativeAllowed);
-        console.error(minNumLength);
-        console.error(maxNumLength);
-        console.error(this.result);
         if (!negativeAllowed && this.result < 0) {
             return this.generateCaptcha(useMinus, negativeAllowed, minNumLength, maxNumLength);
         } else {
@@ -60,7 +55,6 @@ export class CaptchaProvider {
         let range = maxNumLength - minNumLength + 1;
         let numbCnt = this.getRandom() % range;
         numbCnt = numbCnt + minNumLength;
-        console.error(numbCnt);
         let resultNum = 0;
         let first = true;
         for (let i = numbCnt; i > 0; i--) {
